@@ -1,14 +1,97 @@
-#center {
-	margin-left: auto;
-	margin-right: auto;
-    color: #f5a623;
+body {
+	background: url("../images/skyline.jpg");
+	background-repeat: no-repeat;
+	background-size: 1800px;
+	overflow: hidden;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+#title {
+	padding-top: 45px;
+	position: relative;
+    color: #FFF;
+	font-size: 60px;
+	text-align: center;
 }
+
+#field {
+	max-width: 400px;
+	margin: 0 auto 5px auto;
+	text-align: center;
+	font-size: 28px;
+	z-index: 1;
+}
+
+.invisible {
+	position: absolute;
+	margin-top: -35px;
+	margin-bottom:  20px;
+	z-index: 0;
+	opacity: 0;
+}
+
+.visible {
+	margin-top: 10px;
+	margin-bottom:  15px;
+	transition: .5s;
+	opacity: 1;
+}
+
+
+#submit {
+	max-width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 18px;
+}
+
+.fonts {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+}
+
+.form {
+	position: relative;
+	display: block;
+	width: 100% 1066px;
+	color: #727272;
+}
+
 #map {
-  height: 100%;
+	width: 700px;
+	height: 400px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@media screen and (min-width: 1801px) {
+	body {
+		background-size: cover;
+	}
+}
+
+
+@media screen and (max-width: 800px) {
+	#map {
+	    width: 90%;
+	    margin-left: auto;
+	    margin-right: auto;
+  	}
+  	#title {
+  		font-size: 50px;
+  	}
+  	#field {
+  		font-size: 25px;
+  	}
+}
+
+@media screen and (max-width: 530px) {
+	#title {
+		padding-top: 50px;
+	    font-size: 40px;
+  	}
+  	#field {
+  		margin-top: 20px;
+  		max-width: 300px;
+  		font-size: 20px;
+  	}
 }
