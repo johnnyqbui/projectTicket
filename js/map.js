@@ -6,7 +6,7 @@ var layer;
 // Zoom to current position and show marker
 // See also: navigator.geolocation.getCurrentPosition
 var showPosition = function(position) {
-  
+
   var userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
   var marker = new google.maps.Marker({
@@ -16,7 +16,7 @@ var showPosition = function(position) {
   });
 
   map.setZoom(15);
-}
+};
 
 /****************************************************************/
 // Main method
@@ -30,7 +30,7 @@ function initMap() {
     },
     zoom: 10
   });
-  
+
   //
   // Initialize layer
   var defaultStyles = [{
@@ -85,7 +85,7 @@ function initMap() {
         }
       });
       layer.setMap(map); // Workaround, looks like the display doesn't update correctly otherwise
-    } 
+    }
     //
     // When the map is zoomed in, show data points
     else {
