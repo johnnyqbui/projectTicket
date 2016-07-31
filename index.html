@@ -8,7 +8,7 @@
 
   </head>
   <body>
-    <h1 id="title" class="fonts">
+    <h1 id="title" class="fonts center">
       Parking Tickets in Houston
     </h1>
     <form>
@@ -16,10 +16,14 @@
       <input id="submit" class= "fonts form invisible" type="submit" value="Submit">
     </form>
     <div id="map"></div>
+    <p class="data-info">Data from 07/01/2015 to 03/31/2016</p>
+
+    <input type="button" value="My Location" id="zoomtomyposition" class="center">
 
     <script src="js/jquery-2.2.3.js"></script>
     <script src="js/map.js"></script>
     <script src="js/script.js"></script>
+
     <!-- Replace the value of the key parameter with your own API key. -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs25eSwHM0KhfFuX9R_DczO3UnWO9qRJk&callback=initMap"></script>
 

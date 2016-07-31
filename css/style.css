@@ -5,18 +5,27 @@ body {
 	overflow: hidden;
 }
 
+.center {
+	text-align: center;
+}
+
+.data-info {
+	z-index: 5;
+	font-size: 12px;
+	color: white;
+	text-align: center;
+}
+
 #title {
 	padding-top: 45px;
 	position: relative;
     color: #FFF;
 	font-size: 60px;
-	text-align: center;
 }
 
 #field {
 	max-width: 400px;
 	margin: 0 auto 5px auto;
-	text-align: center;
 	font-size: 28px;
 	z-index: 1;
 }
@@ -44,6 +53,11 @@ body {
 	font-size: 18px;
 }
 
+#zoomtomyposition {
+	display: block;
+	margin: 10px auto 0 auto;
+}
+
 .fonts {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 300;
@@ -54,6 +68,7 @@ body {
 	display: block;
 	width: 100% 1066px;
 	color: #727272;
+	text-align: center;
 }
 
 #map {

@@ -6,16 +6,15 @@ var layer;
 // Zoom to current position and show marker
 // See also: navigator.geolocation.getCurrentPosition
 var showPosition = function(position) {
-
   var userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  map.panTo(userLatLng);
+  map.setZoom(14);
 
   var marker = new google.maps.Marker({
     position: userLatLng,
     title: 'Your Location',
     map: map
   });
-
-  map.setZoom(15);
 };
 
 /****************************************************************/
@@ -35,17 +34,17 @@ function initMap() {
   // Initialize layer
   var defaultStyles = [{
       markerOptions: {
-        iconName: "small_green"
+        iconName: 'small_green'
       }
     }, {
       where: 'num_events >= 2',
       markerOptions: {
-        iconName: "small_yellow"
+        iconName: 'small_yellow'
       }
     }, {
       where: 'num_events >= 5',
       markerOptions: {
-        iconName: "small_red"
+        iconName: 'small_red'
       }
     }];
   layer = new google.maps.FusionTablesLayer({
@@ -95,22 +94,22 @@ function initMap() {
         layer.setOptions({
           styles: [{
             markerOptions: {
-              iconName: "small_green"
+              iconName: 'small_green'
             }
           }, {
             where: 'num_events >= 2',
             markerOptions: {
-              iconName: "small_yellow"
+              iconName: 'small_yellow'
             }
           }, {
             where: 'num_events >= 5',
             markerOptions: {
-              iconName: "small_red"
+              iconName: 'small_red'
             }
           }, {
             where: 'num_events >= 15',
             markerOptions: {
-              iconName: "caution"
+              iconName: 'caution'
             }
           }]
         });
@@ -128,7 +127,7 @@ function initMap() {
       });
       layer.setMap(map);
     }
-    document.getElementById('zoom').innerHTML = zoomLevel;
+    // document.getElementById('zoom').innerHTML = zoomLevel;
   });
 
   //
@@ -138,8 +137,8 @@ function initMap() {
     //
     // Change the content of the InfoWindow
     e.infoWindowHtml = "<b>" + e.row['VIC_LEGAL_DESCRIPTION'].value + "</b><br>";
-    e.infoWindowHtml += "Oops! <b>" + e.row['num_events'].value;
-    if (e.row['num_events'].value == 1) {
+    e.infoWindowHtml += "<b>" + e.row['num_events'].value;
+    if (e.row['num_events'].value === 1) {
       e.infoWindowHtml += "</b> Houstonian got a ticket here!" + "<br>";
     } else {
       e.infoWindowHtml += "</b> Houstonians got a ticket here!" + "<br>";
@@ -147,4 +146,3 @@ function initMap() {
   });
 
 }
-google.maps.event.addDomListener(window, 'load', initialize);
